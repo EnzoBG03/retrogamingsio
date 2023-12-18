@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <menu name="description" content="Dans le cadre du BTS SIO, découvrez le rétrogaming comme jamais vous ne l'avez vu auparavant. Un site réalisé par Enzo BENOIST-GIMET, étudiant dans ce cursus.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SIO - Rétrogaming</title>
+</head>
+<body>
+    <audio id='wii_sports'>
+        <source src="./Sons/Wii Sports - Disque.mp3" type="audio/mp3">
+    </audio>
+    <audio id='son_bonus'>
+        <source src="./Sons/Page - Accueil/Fresque/1UP.mp3" type="audio/mp3">
+    </audio>
+    <audio id='son_saut'>
+        <source src="./Sons/Page - Accueil/Fresque/Saut.mp3" type="audio/mp3">
+    </audio>
+    <audio id='son_ecrase'>
+        <source src="./Sons/Page - Accueil/Fresque/Ecrasé.mp3" type="audio/mp3">
+    </audio>
+    <audio id='son_grandi'>
+        <source src="./Sons/Page - Accueil/Fresque/Grandir.mp3" type="audio/mp3">
+    </audio>
+    <audio id='son_termine'>
+        <source src="./Sons/Page - Accueil/Fresque/Terminé.mp3" type="audio/mp3">
+    </audio>
+    <audio id='son_start'>
+        <source src="./Sons/Page - Accueil/Super Mario Bros - Sol.mp3" type="audio/mp3">
+    </audio>
+    <audio id='son_niveau1'>
+        <source src="./Sons/Page - Quoi/Super Mario 64 - Niveau1.mp3" type="audio/mp3">
+    </audio>
+    <audio id='PS1_image'>
+        <source src="./Sons/Page - Concept/PS1 - Lancement.mp3" type="audio/mp3">
+      </audio>
+    <audio id='XBOX_image'>
+        <source src="./Sons/Page - Concept/Xbox - Lancement.mp3" type="audio/mp3">
+    </audio>
+    <audio id='Wii_image'>
+        <source src="./Sons/Page - Comment/Wii - Démarrage.mp3" type="audio/mp3">
+    </audio>
+    <audio id='piste1'>
+        <source src="./Sons/Page - AvIn/Tetris.mp3" type="audio/mp3">
+    </audio>
+    <audio id='piste2'>
+        <source src="./Sons/Page - AvIn/San Andreas.mp3" type="audio/mp3">
+    </audio>
+    <audio id='piste3'>
+        <source src="./Sons/Page - AvIn/Sonic.mp3" type="audio/mp3">
+    </audio>
+    <audio id='piste4'>
+        <source src="./Sons/Page - AvIn/Dr. Mario.mp3" type="audio/mp3">
+    </audio>
+    <audio id='retro1'>
+        <source src="./Sons/Page - Opinion/Super Mario 64 - Aquatique.mp3" type="audio/mp3">
+    </audio>
+    <audio id='retro2'>
+        <source src="./Sons/Page - Opinion/Skylanders.mp3" type="audio/mp3">
+    </audio>
+    <audio id='retro3'>
+        <source src="./Sons/Page - Opinion/Wii Party.mp3" type="audio/mp3">
+    </audio>
+    <audio id='retro4'>
+        <source src="./Sons/Page - Opinion/Super Mario Bros - Château.mp3" type="audio/mp3">
+    </audio>
+    <audio id='retro5'>
+        <source src="./Sons/Page - Opinion/Pokémon - Route 201.mp3" type="audio/mp3">
+    </audio>
+    <audio id='retro6'>
+        <source src="./Sons/Page - Opinion/Flipper Waluigi.mp3" type="audio/mp3">
+    </audio>
+    <audio id='retro7'>
+        <source src="./Sons/Page - Opinion/LittleBigPlanet.mp3" type="audio/mp3">
+    </audio>
+    <audio id='retro8'>
+        <source src="./Sons/Page - Opinion/Worms.mp3" type="audio/mp3">
+    </audio>
+    <audio id='retro9'>
+        <source src="./Sons/Page - Opinion/Crash Bandicoot.mp3" type="audio/mp3">
+    </audio>
+    <audio id='cache'>
+        <source src="./Sons/Page - Futur/Pac-Man.mp3" type="audio/mp3">
+    </audio>
+    <audio id='ferme'>
+        <source src="./Sons/Page - Sondage/Super Mario 64 - Réussi.mp3" type="audio/mp3">
+    </audio>
+    <section id="charge">
+        <div id="loader"> <!--Crée une "icône de chargement" animée-->
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+        </div>
+    </section>
+    <header id="titre"> <!--Affiche le titre de la page, et cache un son qui se lance au clic : c'est l'easter egg n°1-->
+        <h1 style="cursor: pointer;">Le Rétrogaming<h3>Par Enzo BENOIST-GIMET</h3></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#accueil" title="Revenez à l'accueil">Accueil</a></li>
+            <li><a href="#quoi" title="Découvrez un mouvement original">Qu'est-ce que c'est ?</a></li>
+            <li><a href="#concept" title="Apprenez les origines du rétrogaming">Le concept</a></li>
+            <li><a href="#comment" title="Découvrez comment prendre part au mouvement">Comment faire ?</a></li>
+            <li><a href="#avin" title="Prenez connaissance des bons et des mauvais côtés">Avantages et inconvénients</a></li>
+            <li><a href="#opinion" title="Lisez mon point de vue personnel">Mon opinion</a></li>
+            <li><a href="#futur" title="Imaginez l'avenir de ce mouvement">Le futur</a></li>
+        </ul>
+    </nav>
+    <section class="sec1" id="accueil">
+        <br></br>
+        <h2 id="start" style="line-height: 1.5em; cursor: pointer;" title="Super ! Maintenant, démarrez ce niveau.">Bienvenue sur la page d'accueil !</h2>
+        <div class="fresque">
+            <img id="mario" style="cursor: pointer;" src="./Images/Page - Accueil/Fresque/Animation - Mario.png" width="125" height="165">
+            <img id="saut" src="./Images/Page - Accueil/Fresque/Animation - Saut de Mario.png" width="125" height="165">
+            <img id="grand" src="./Images/Page - Accueil/Fresque/Animation - Grand Mario.png" width="145" height="230">
+            <img class="goomba" style="cursor: pointer;" onclick="animateImage(this)" src="./Images/Page - Accueil/Fresque/Goomba.png" width="170">
+            <img class="goomba" style="cursor: pointer;" onclick="animateImage(this)" src="./Images/Page - Accueil/Fresque/Goomba.png" width="170">
+            <img class="goomba" style="cursor: pointer;" onclick="animateImage(this)" src="./Images/Page - Accueil/Fresque/Goomba.png" width="170">
+            <img id="champignon" style="cursor: pointer;" src="./Images/Page - Accueil/Fresque/Champignon.png" width="155">
+            <button id="termine" type="button">J'ai récupéré le champignon !</button>
+        </div>
+        <br></br>
+        <div id="présentation">
+            <h3>Sur ce site, vous vous apprêtez à découvrir un thème rempli de nostalgie.</h3>
+            <br></br>
+            <h3>Au fil des sections, étape par étape, vous apprendrez à connaître les différents points qui constituent le rétrogaming.</h3>
+            <h3>Pour vous plonger au mieux dans cette aventure, vous retrouverez plusieurs références aux anciens jeux qui ont probablement bercé votre enfance.</h3>
+            <br></br>
+            <h3>Des <i id="up" style="cursor: pointer;" title="A ce niveau-là, c'est un cadeau.">easter eggs</i> se sont cachés un peu partout dans les différentes sections de ce site. Saurez-vous les retrouver ?</h3>
+            <!--Cette partie en italique renferme un "bonus" : c'est l'easter egg n°2-->
+            <h3>(Par exemple, aidez Mario à récupérer ce champignon sans heurter un Goomba. Vous savez comment vous en débarasser, n'est-ce pas ?)</h3>
+            <br></br>
+            <h3>Quand vous arriverez au bout de cette page, vous pourrez retrouver un sondage qui vous permettra d'exprimer vos impressions.</h3>
+            <br></br>
+            <h3 id="branche">Il ne reste plus qu'à vous souhaiter une bonne lecture !</h3>
+            <img src="./Images/Page - Accueil/Manette SNES.png" width="350">
+        </div>
+    </section>
+    <section class="sec2" id="quoi">
+        <br></br>
+        <h2 style="line-height: 1.5em;">Qu'est-ce que le rétrogaming ?</h2>
+        <br></br>
+        <br></br>
+        <div id="texte1">
+            <h3>Quand on parle de rétrogaming, on évoque principalement le fait de jouer à certains jeux vidéos</h3>
+            <h3>en particulier ; dans ce cas précis, on parle des jeux datant au moins des années 1980.</h3>
+            <h3>Les consoles telles que la NES, la MegaDrive et la GameBoy sont concernées par ce mouvement.</h3>
+            <br></br>
+            <div class="gameplay">
+                <video width="640" height="360" controls>
+                    <source src="./Vidéos/Gameplay - Excitebike.mp4" type="video/mp4">
+                </video>
+                <a href="https://fr.wikipedia.org/wiki/Excitebike" title="Apprenez-en plus sur Excitebike" target="_blank">
+                    <img id="roule" src="./Images/Page - Quoi/Excitebike.png" width="150">
+                </a>
+            </div>
+            <br></br>
+            <h3>Depuis plusieurs années, le rétrogaming fait l'objet de nombreuses conventions culturelles.</h3>
+            <h3>Que ce soit pour jouer, faire des achats ou rencontrer des joueurs, ce mouvement est devenu</h3>
+            <h3>un vrai fil conducteur dans le domaine du jeu vidéo.</h3>
+            <br></br>
+            <h3>Pour résumer, le rétrogaming représente une expérience nostalgique qui s'est fait une grande</h3>
+            <h3>place dans le domaine du jeu vidéo. Grâce à sa large collection intemporelle de jeux rétro,</h3>
+            <h3>le rétrogaming a pu construire un pont entre les différentes générations de joueurs.</h3>
+        </div>
+        <div class="convention">
+            <img id='affiche' style="cursor: pointer;" src="./Images/Page - Quoi/Illustration - Convention.jpg" title="Bravo ! C'était un coup de chance ?" width="350">
+            <h4>Ci-contre, l'affiche de la convention "Brocante des Geeks" de 2022 à Saint-Germain-des-Fossés(03), qui regroupait tous les éléments de la popculture.</h4>
+        </div>
+    </section>
+    <section class="sec3" id="concept">
+        <br></br>
+        <h2 style="line-height: 1.5em;">D'où vient le concept du rétrogaming ?</h2>
+        <br></br>
+        <div id="texte2">
+            <h3>La légende veut que le rétrogaming ait fait ses débuts lors des années 2000. Cependant, cela remonte à un peu plus loin que cela.</h3>
+            <h3>En vérité, les origines du rétrogaming se trouvent au sein des années 1990, soit pratiquement aux débuts de ce que l'on connaît aujourd'hui.</h3>
+            <br></br>
+            <h3>Lors des années 1990, le marché du jeu vidéo a été bouleversé par l'arrivée de la Playstation et de la Xbox.</h3>
+            <h3>Si Nintendo a survécu à cette apparition, ce ne sera malheureusement pas le cas pour SEGA.</h3>
+            <div class="logos">
+                <img id='PS1' src="./Images/Page - Concept/Logos/PlayStation1.png" title="Vous êtes quelqu'un d'observateur..." width="200">
+                <img id='XBOX' src="./Images/Page - Concept/Logos/Xbox.png" title="Deux pour le prix d'un ! Comment avez-vous fait ?" width="200">
+            </div>
+            <br></br>
+            <h3>Lors des années 2000, le terme de "rétrogaming" est apparu. Les nouvelles technologies ont permis l'arrivée des émulateurs </h3>
+            <h3>(des logiciels capables de reproduire à l'identique les consoles rétro) : c'est ce qui a permis au rétrogaming de s'élargir dans le monde à l'heure actuelle.</h3>
+            <br></br>
+            <h3>Il convient également de noter que cette évolution est parallèle à l'avancée de notre société, qui a "démocratisé" le jeu vidéo.</h3>
+            <h3>La communauté a saisi cette occasion pour organiser de plus en plus de conventions et attirer de nouveaux joueurs.</h3>
+            <div class="GameBoy">
+                <img id="GB" src="./Images/Page - Concept/GameBoys/GameBoy.png" width="150">
+                <img id="GBC" src="./Images/Page - Concept/GameBoys/GameBoy Color.png" width="180">
+                <img id="GBA" style="cursor: pointer;" title="Raté ! Il n'y a rien ici !" src="./Images/Page - Concept/GameBoys/GameBoy Advance.png" width="290">
+            </div>
+        </div>
+    </section>
+    <section class="sec4" id="comment">
+        <br></br>
+        <h2 style="line-height: 1.5em;">Comment faire du rétrogaming ?</h2>
+        <br></br>
+        <div id="texte3">
+            <h3>Avec l'arrivée des nouvelles technologies, le rétrogaming peut être exécuté de différentes manières.</h3>
+            <h3>On peut se pencher sur 5 possibilités :</h3>
+            <br></br>
+            <h3>Premièrement, ressortir des cartons les consoles authentiques est la meilleure option pour le rétrogaming.</h3>
+            <h3>Cependant, comme les systèmes graphiques ont évolué depuis plusieurs décennies, des solutions avec des adaptateurs existent.</h3>
+            <br></br>
+            <h3>Deuxièmement, il est possible d'installer des émulateurs sur son PC, et d'utiliser des fichiers ROMS permettant de retranscrire les jeux rétros.</h3>
+            <h3>Il existe des émulateurs propres à chaque console, tout comme il existe des émulateurs polyvalents pouvant traiter toutes les consoles rétro.</h3>
+            <h3 id="warning"><i>AVERTISSEMENT :</i> Les fichiers ROMS sont sujets à des restrictions légales ; il est vivement recommandé de posséder la copie physique d'un jeu</h3>
+            <h3 id="warning">avant de récupérer sa version ROM sur Internet.</h3>
+            <br></br>
+            <h3>Troisièmement, des firmes telles que Nintendo ont développé des consoles dédiées au rétrogaming, avec un catalogue de jeux prédéfini.</h3>
+            <h3>Malgré tout, ce catalogue est assez limité (30 jeux seulement pour la NES Classic Mini).</h3>
+            <br></br>
+            <h3>Du point de vue moderne, les grandes firmes du jeu vidéo, à savoir PlayStation, Xbox et Nintendo (une nouvelle fois), proposent des options</h3>
+            <h3>dédiées au rétrogaming dans leurs abonnements en ligne, avec des tarifs plus ou moins coûteux.</h3>
+            <h3>Le rétrogaming peut également être pratiqué au sein des évènements communautaires en guise de divertissement.</h3>
+            <br></br>
+            <div class="solutions">
+                <img id="image1" style="cursor: pointer;" src="./Images/Page - Comment/Wii.png" title="Un petit retour en arrière..." width="200">
+                <img id="image2" src="./Images/Page - Comment/Adaptateur Wii.png" width="200">
+                <a href="https://www.retroarch.com/" title="Vous devez sûrement vous demander de quoi il s'agit..." target="_blank">
+                    <img id="image3" style="cursor: pointer;" src="./Images/Page - Comment/RetroArch.png" width="200">
+                </a>
+                <img id="image4" src="./Images/Page - Comment/NES Classic.png" width="200">
+            </div>
+        </div>
+    </section>
+    <section class="sec5" id="avin">
+        <br></br>
+        <h2 style="line-height: 1.5em;">Quels sont les avantages et les inconvénients du rétrogaming ?</h2>
+        <br></br>
+        <div id="texte4">
+            <h3>Le rétrogaming est un procédé innovant qui présente de nombreux avantages :</h3>
+            <br></br>
+            <h3>Le <i>rétrogamer</i> vit une expérience nostalgique à travers ses souvenirs d'enfance. Grâce à un </h3>
+            <h3>catalogue de jeux qui devient de plus en plus fourni au fil des années, ainsi qu'avec l'arrivée des</h3>
+            <h3>émulateurs, il est en mesure de personnaliser sa propre expérience de jeu.</h3>
+            <h3>De plus, cette expérience est facilitée par la simplicité très connue des jeux rétros : l'influence</h3>
+            <h3>n'en est que bénéfique.</h3>
+            <br></br>
+            <br></br>
+            <h3>Malgré tout, il existe quelques contraintes autour du rétrogaming :</h3>
+            <h3>Le coût des matériels peuvent être un frein, car il faut prendre en compte l'évolution technologique du</h3>
+            <h3>XXI<sup>ème</sup> siècle, et par conséquent des graphismes ; maintenir une bonne expérience visuelle par le biais</h3>
+            <h3>d'adaptateurs peut rapidement devenir handicapant. De plus, les consoles en elles-mêmes sont de plus en plus prisées,</h3>
+            <h3>et valent désormais quelques centaines d'euros sur le marché.</h3>
+            <h3>Il ne faut également pas oublier les droits d'auteur en ce qui concerne les fichiers ROM des jeux rétros : cela rajoute</h3>
+            <h3>une pression aux <i>rétrogamers</i> du côté légal.</h3>
+            <br></br>
+            <div class="jukebox">
+                <div id="son1">
+                    <img id='play1' src="./Images/Page - AvIn/Jukebox/Icône - Play.png" alt="Play" width="40">
+                    <img id='pause1' src="./Images/Page - AvIn/Jukebox/Icône - Pause.png" alt="Pause" width="40">
+                    <h4>Son n°1 : Soyez logique à travers cette musique</h4>
+                </div>
+                <div id="son2">
+                    <img id='play2' src="./Images/Page - AvIn/Jukebox/Icône - Play.png" alt="Play" width="40">
+                    <img id='pause2' src="./Images/Page - AvIn/Jukebox/Icône - Pause.png" alt="Pause" width="40">
+                    <h4>Son n°2 : Voyagez dans une région avec une certaine ambiance</h4>
+                </div>
+                <div id="son3">
+                    <img id='play3' src="./Images/Page - AvIn/Jukebox/Icône - Play.png" alt="Play" width="40">
+                    <img id='pause3' src="./Images/Page - AvIn/Jukebox/Icône - Pause.png" alt="Pause" width="40">
+                    <h4>Son n°3 : Courez très rapidement dans un terrain vert</h4>
+                </div>
+                <div id="son4">
+                    <img id='play4' src="./Images/Page - AvIn/Jukebox/Icône - Play.png" alt="Play" width="40">
+                    <img id='pause4' src="./Images/Page - AvIn/Jukebox/Icône - Pause.png" alt="Pause" width="40">
+                    <h4>Son n°4 : Jouez le médecin minutieux</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec6" id="opinion">
+        <br></br>
+        <h2 style="line-height: 1.5em;">Quelle est mon opinion concernant le rétrogaming ?</h2>
+        <br></br>
+        <h3 id="note">Note : Il ne s'agit que de mon opinion. Vous aurez l'occasion de me faire part de votre sélection.</h3>
+        <br></br>
+        <div id="texte5">
+            <h3>Voici ce que j'utilise pour jouer aux jeux rétro :</h3>
+            <img style="cursor: pointer;" title="Pas celles-là ; regardez à gauche !" src="./Images/Page - Opinion/Raspberry Pi - Enzo.jpg" width="150">
+            <img src="./Images/Page - Opinion/Wii - Enzo.jpg" width="150">
+            <img src="./Images/Page - Opinion/NES Classic Mini - Enzo.jpg" width="150">
+            <h4>A préciser : bien que les images aux extrémités aient l'air similaires, à gauche,</h4>
+            <h4>il s'agit d'un Raspberry Pi 3B+ faisant tourner le système nommé Batocera.</h4>
+            <br></br>
+            <h3>Je vous ai répertorié mes coups de coeur parmi le catalogue de jeux rétro.</h3>
+            <h3>Ils se trouvent sur la gauche de l'écran. <h3 style="cursor: pointer;" title="Souvenez-vous : comment avez-vous trouvé tous les easter eggs précédents ?">(Immergez-vous dedans !)</h3></h3>
+            <br></br>
+            <h3 id="bref">Mais revenons-en au sujet principal :</h3>
+            <h3>De mon point de vue, le rétrogaming offre une expérience enrichissante</h3>
+            <h3>culturellement parlant. Il en y a pour tous les types de joueurs, des plus</h3>
+            <h3>jeunes aux plus âgés. En ce qui concerne ma génération, je considère</h3>
+            <h3>qu'elle a raté une certaine quantité de "classiques", et qu'il est</h3>
+            <h3>nécessaire d'apprendre à connaître leurs mécaniques.</h3>
+            <br></br>
+            <h3>Êtes-vous prêts pour la dernière étape ?</h3>
+        </div>
+        <div class="banque">
+            <img id="jeu1" style="cursor: pointer;" title="Faites-vous plaisir : cliquez partout !" src="./Images/Page - Opinion/Jeux favoris/1.jpeg" width="275">
+            <img id="jeu2" style="cursor: pointer;" title="Faites-vous plaisir : cliquez partout !" src="./Images/Page - Opinion/Jeux favoris/2.jpg" width="400">
+            <img id="jeu3" style="cursor: pointer;" title="Faites-vous plaisir : cliquez partout !" src="./Images/Page - Opinion/Jeux favoris/3.jpeg" width="140">
+            <img id="jeu4" style="cursor: pointer;" title="Faites-vous plaisir : cliquez partout !" src="./Images/Page - Opinion/Jeux favoris/4.jpeg" width="150">
+            <img id="jeu5" style="cursor: pointer;" title="Faites-vous plaisir : cliquez partout !" src="./Images/Page - Opinion/Jeux favoris/5.jpeg" width="220">
+            <img id="jeu6" style="cursor: pointer;" title="Faites-vous plaisir : cliquez partout !" src="./Images/Page - Opinion/Jeux favoris/6.jpg" width="220">
+            <img id="jeu7" style="cursor: pointer;" title="Faites-vous plaisir : cliquez partout !" src="./Images/Page - Opinion/Jeux favoris/7.jpg" width="170">
+            <img id="jeu8" style="cursor: pointer;" title="Faites-vous plaisir : cliquez partout !" src="./Images/Page - Opinion/Jeux favoris/8.jpg" width="175">
+            <img id="jeu9" style="cursor: pointer;" title="Faites-vous plaisir : cliquez partout !" src="./Images/Page - Opinion/Jeux favoris/9.jpg" width="200">
+        </div>
+    </section>
+    <section class="sec7" id="futur">
+        <br></br>
+        <h2 style="line-height: 1.5em;">Quel est le futur du rétrogaming ?</h2>
+        <br></br>
+        <div id="texte6">
+            <h3>Dans un monde en constante évolution, le rétrogaming pourrait être amélioré par plusieurs types de modifications.</h3>
+            <h3>Il est possible d'en énumérer une partie ci-dessous :</h3>
+            <br></br>
+            <h3>Avec l'amélioration continue des réalités virtuelle et augmentée, on peut imaginer une intégration des éléments principaux</h3>
+            <h3>du rétrogaming dans un environnement technologique de haut niveau, avec des interactions de plus en plus réalistes.</h3>
+            <br></br>
+            <h3>Vous devez sans doute connaître les plateformes de streaming qui alimentent nos vies. Imaginez un peu une</h3>
+            <h3>plateforme entièrement dédiée au rétrogaming, avec un choix de jeux à en faire pâlir les joueurs ; ce</h3>
+            <h3>serait incroyable, non ?</h3>
+            <br></br>
+            <h3>L'intelligence artificielle connaît une progression affolante ces derniers mois. Cela pourrait profiter aux <i>rétrogamers</i>,</h3>
+            <h3>qui auraient l'occasion de développer de nouvelles fonctionnalités intelligentes (imaginez qu'on puisse</h3>
+            <h3>personnaliser les dialogues dans une partie de GTA !).</h3>
+            <br></br>
+            <h3>Pour les jeux en eux-mêmes, la communauté acquiert de plus en plus de compétences ; la création de "mods", d'extensions</h3>
+            <h3>et d'émulateurs plus performants devient de plus en plus envisageable.</h3>
+            <br></br>
+            <h3>Enfin, le rétrogaming pourrait s'ancrer encore plus dans la culture d'aujourd'hui ; même si cela paraît</h3>
+            <h3>peu probable, on pourrait avoir des cours concernant les effets des jeux rétro sur notre société.</h3>
+        </div>
+        <div class="illustrations">
+            <img src="./Images/Page - Futur/VR-AR.jpg" width="300">
+            <h4>Une imagination de Super Mario Bros en réalité virtuelle</h4>
+            <br></br>
+            <img src="./Images/Page - Futur/Mod - Eléphant.jpeg" width="300">
+            <h4>Un Mario éléphant dans Super Mario 64 ? Le résultat d'un mod !</h4>
+            <br></br>
+            <br></br>
+            <a href="#sondage"><img id="fleche" style="cursor: pointer;" title="On ne peut plus rien vous cacher !" src="./Images/Page - Futur/Flèche - Sondage.png" width="200"></a>
+        </div>
+    </section>
+    <section class="sec8" id="sondage">
+        <br></br>
+        <br></br>
+        <div class="images_gauche">
+            <img src="./Images/Page - Sondage/Metroid.png" width="230">
+            <br></br>
+            <br></br>
+            <img src="./Images/Page - Sondage/Donkey Kong.png" width="280">
+        </div>
+        <form action="mailto:enzo.benoist-gimet@outlook.fr?subject=Evaluation du site Rétrogaming" method="post" enctype="text/plain">
+
+            <label for="Question 1">Question 1 : Qu'avez-vous aimé sur ce site ?</label><br>
+            <textarea id="Question 1" name="Question 1" rows="4" cols="50"></textarea><br>
+        
+            <label for="Question 2">Question 2 : Est-ce que ce site vous a procuré de la nostalgie ?</label><br>
+            <textarea id="Question 2" name="Question 2" rows="4" cols="50"></textarea><br>
+    
+            <label for="Question 3">Question 3 : Quels sont vos jeux rétro favoris ?</label><br>
+            <textarea id="Question 3" name="Question 3" rows="4" cols="50"></textarea><br>
+        
+            <label for="Question 4">Question 4 : Êtes-vous d'accord avec les informations présentes sur ce site ? Si ce n'est pas le cas, pourquoi ?</label><br>
+            <textarea id="Question 4" name="Question 4" rows="4" cols="50"></textarea><br>
+        
+            <label for="Question 5">Question 5 : Comment ce site pourrait-il être amélioré ?</label><br>
+            <textarea id="Question 5" name="Question 5" rows="4" cols="50"></textarea><br>
+    
+            <label>Sur une échelle de 0 à 10, quelle note donneriez-vous à ce site ?</label>
+            <div class="rating-container">
+              <input type="radio" id="rating0" name="Note du visiteur" value="0">
+              <span class="rating-label">0</span>
+              <input type="radio" id="rating1" name="Note du visiteur" value="1">
+              <span class="rating-label">1</span>
+              <input type="radio" id="rating2" name="Note du visiteur" value="2">
+              <span class="rating-label">2</span>
+              <input type="radio" id="rating3" name="Note du visiteur" value="3">
+              <span class="rating-label">3</span>
+              <input type="radio" id="rating4" name="Note du visiteur" value="4">
+              <span class="rating-label">4</span>
+              <input type="radio" id="rating5" name="Note du visiteur" value="5">
+              <span class="rating-label">5</span>
+              <input type="radio" id="rating6" name="Note du visiteur" value="6">
+              <span class="rating-label">6</span>
+              <input type="radio" id="rating7" name="Note du visiteur" value="7">
+              <span class="rating-label">7</span>
+              <input type="radio" id="rating8" name="Note du visiteur" value="8">
+              <span class="rating-label">8</span>
+              <input type="radio" id="rating9" name="Note du visiteur" value="9">
+              <span class="rating-label">9</span>
+              <input type="radio" id="rating10" name="Note du visiteur" value="10">
+              <span class="rating-label">10</span>
+            </div>
+            <br></br>
+            <input id="fin" onclick="afficherSection()" type="submit" value="Envoyer">
+        </form>
+        <div class="images_droite">
+            <img src="./Images/Page - Sondage/Galaga.png" width="230">
+            <br></br>
+            <br></br>
+            <img src="./Images/Page - Sondage/Kirby.png" width="280">
+        </div>
+    </section>
+    <section class="cacher" id="revoir">
+        <h3>Félicitations, vous venez de terminer votre visite ; vous pouvez désormais fermer cette page.</h3>
+        <br></br>
+        <h3>En espérant vous revoir une prochaine fois !</h3>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
